@@ -1,5 +1,5 @@
 {
-  "name": "coachkit",
+  "name": "claude-coach-kit",
   "version": "1.2.0",
   "description": "Open-source marketing automation for coaches, consultants & solopreneurs. Built with Supabase + React.",
   "type": "module",
@@ -26,7 +26,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/coachkit.git"
+    "url": "https://github.com/YOUR_USERNAME/claude-coach-kit.git"
   },
   "bugs": {
     "url": "https://github.com/YOUR_USERNAME/coachkit/issues"

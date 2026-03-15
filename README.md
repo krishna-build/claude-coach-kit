@@ -4,9 +4,9 @@
   <p>Stop paying $500+/month for marketing tools. CoachKit gives you everything — for free.</p>
 
   <p>
-    <a href="https://github.com/krishna-build/coachkit/stargazers"><img src="https://img.shields.io/github/stars/krishna-build/coachkit?style=social" alt="Stars"></a>
-    <a href="https://github.com/krishna-build/coachkit/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
-    <a href="https://github.com/krishna-build/coachkit/issues"><img src="https://img.shields.io/github/issues/krishna-build/coachkit" alt="Issues"></a>
+    <a href="https://github.com/krishna-build/claude-coach-kit/stargazers"><img src="https://img.shields.io/github/stars/krishna-build/claude-coach-kit?style=social" alt="Stars"></a>
+    <a href="https://github.com/krishna-build/claude-coach-kit/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
+    <a href="https://github.com/krishna-build/claude-coach-kit/issues"><img src="https://img.shields.io/github/issues/krishna-build/claude-coach-kit" alt="Issues"></a>
     <img src="https://img.shields.io/badge/Built%20with-Claude-blueviolet" alt="Built with Claude">
     <img src="https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white" alt="Supabase">
     <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React">
@@ -125,7 +125,7 @@ Most coaches and solopreneurs pay **$200-500/month** for tools like HubSpot, Act
 
 ```bash
 # Clone the repository
-git clone https://github.com/krishna-build/coachkit.git
+git clone https://github.com/krishna-build/claude-coach-kit.git
 cd coachkit
 
 # Install dependencies
