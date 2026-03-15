@@ -72,6 +72,19 @@ Most coaches and solopreneurs pay **$200-500/month** for tools like HubSpot, Act
 
 ---
 
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Contacts Management
+![Contacts](docs/screenshots/contacts.png)
+
+### UTM Attribution Analytics
+![Attribution](docs/screenshots/attribution.png)
+
+
 ## 🏗️ Architecture
 
 ```
