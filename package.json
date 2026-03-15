@@ -1,0 +1,69 @@
+{
+  "name": "coachkit",
+  "version": "1.2.0",
+  "description": "Open-source marketing automation for coaches, consultants & solopreneurs. Built with Supabase + React.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
+  },
+  "keywords": [
+    "marketing-automation",
+    "crm",
+    "email-marketing",
+    "coaching",
+    "supabase",
+    "react",
+    "lead-management",
+    "utm-tracking",
+    "razorpay",
+    "open-source"
+  ],
+  "author": "CoachKit Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/coachkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/coachkit/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/coachkit#readme",
+  "dependencies": {
+    "@hello-pangea/dnd": "^18.0.1",
+    "@supabase/supabase-js": "^2.95.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-query": "^5.90.21",
+    "@tiptap/extension-link": "^3.20.0",
+    "@tiptap/extension-placeholder": "^3.20.0",
+    "@tiptap/pm": "^3.20.0",
+    "@tiptap/react": "^3.20.0",
+    "@tiptap/starter-kit": "^3.20.0",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.564.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.0",
+    "recharts": "^3.7.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.3.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import "leaflet/dist/leaflet.css";
+
+@import "tailwindcss";
+
+/* Leaflet dark overrides */
+.leaflet-container { background: #060610 !important; font-family: Inter, sans-serif; }
+.leaflet-tooltip { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+.leaflet-tooltip::before { display: none !important; }
+.leaflet-bar a { background: rgba(10,10,20,0.9) !important; color: #9ca3af !important; border-color: rgba(255,255,255,0.1) !important; }
+.leaflet-bar a:hover { background: rgba(20,20,40,0.9) !important; color: #fff !important; }
+.leaflet-control-attribution { display: none !important; }
+
+@theme {
+  /* High contrast dark theme for better readability */
+  --color-background: #0a0a14;
+  --color-foreground: #ffffff;
+
+  --color-card: #1a1b26;
+  --color-card-foreground: #ffffff;
+
+  --color-primary: #FFB433;
+  --color-primary-light: #ffc85c;
+  --color-primary-dark: #e6a02e;
+
+  --color-secondary: #2e3040;
+  --color-secondary-foreground: #e5e5e5;
+
+  --color-muted: #2a2e3f;
+  --color-muted-foreground: #b4b8c5;
+
+  --color-border: #3a3f54;
+  --color-input: #2a2e3f;
+  --color-ring: #FFB433;
+
+  --color-sidebar: #1a1c24;
+  --color-sidebar-hover: #262830;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --color-gold: #FFB433;
+  --color-gold-dark: #e6a02e;
+  --color-gold-light: #ffc85c;
+
+  --color-surface: #2a2c36;
+  --color-surface-hover: #32343e;
+
+  --font-sans: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================
+   DARK MODE (default) - IMPROVED CONTRAST
+   ========================================== */
+:root {
+  --color-background: #0a0a14;
+  --color-foreground: #ffffff;
+  --color-card: #1a1b26;
+  --color-card-foreground: #ffffff;
+  --color-primary: #FFB433;
+  --color-primary-light: #ffc85c;
+  --color-primary-dark: #e6a02e;
+  --color-secondary: #2e3040;
+  --color-secondary-foreground: #e5e5e5;
+  --color-muted: #2a2e3f;
+  --color-muted-foreground: #b4b8c5;
+  --color-border: #3a3f54;
+  --color-input: #2a2e3f;
+  --color-ring: #FFB433;
+  --color-sidebar: #1a1c24;
+  --color-sidebar-hover: #262830;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-gold: #FFB433;
+  --color-gold-dark: #e6a02e;
+  --color-gold-light: #ffc85c;
+  --color-surface: #2a2c36;
+  --color-surface-hover: #32343e;
+}
+
+/* ==========================================
+   LIGHT MODE
+   ========================================== */
+[data-theme="light"] {
+  --color-background: #f5f6fa;
+  --color-foreground: #1a1c24;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1c24;
+  --color-primary: #FFB433;
+  --color-primary-light: #ffc85c;
+  --color-primary-dark: #d4941a;
+  --color-secondary: #f0f1f5;
+  --color-secondary-foreground: #555;
+  --color-muted: #e8e9ef;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e2e4ea;
+  --color-input: #f0f1f5;
+  --color-ring: #FFB433;
+  --color-sidebar: #ffffff;
+  --color-sidebar-hover: #f5f6fa;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-gold: #FFB433;
+  --color-gold-dark: #d4941a;
+  --color-gold-light: #ffc85c;
+  --color-surface: #f0f1f5;
+  --color-surface-hover: #e8e9ef;
+}
+
+/* Also respect system preference when no explicit data-theme is set */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-background: #f5f6fa;
+    --color-foreground: #1a1c24;
+    --color-card: #ffffff;
+    --color-card-foreground: #1a1c24;
+    --color-primary: #FFB433;
+    --color-primary-light: #ffc85c;
+    --color-primary-dark: #d4941a;
+    --color-secondary: #f0f1f5;
+    --color-secondary-foreground: #555;
+    --color-muted: #e8e9ef;
+    --color-muted-foreground: #6b7280;
+    --color-border: #e2e4ea;
+    --color-input: #f0f1f5;
+    --color-ring: #FFB433;
+    --color-sidebar: #ffffff;
+    --color-sidebar-hover: #f5f6fa;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-gold: #FFB433;
+    --color-gold-dark: #d4941a;
+    --color-gold-light: #ffc85c;
+    --color-surface: #f0f1f5;
+    --color-surface-hover: #e8e9ef;
+  }
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  background: var(--color-background, #1e2028);
+  color: var(--color-foreground, #f2f2f2);
+  font-family: var(--font-sans, 'Montserrat', 'Inter', system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  /* Prevent double-tap zoom on iOS */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Gold text gradient */
+.gold-text {
+  background: linear-gradient(135deg, #c8942a, #ffc85c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: color-mix(in srgb, var(--color-card) 80%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  border-radius: 1rem;
+}
+
+/* Scrollbar styling — warm dark */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-foreground);
+}
+
+/* Dark scrollbar for sidebar */
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #2e3040;
+}
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3a3c4a;
+}
+
+[data-theme="light"] .dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #d0d2da;
+}
+[data-theme="light"] .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #b0b2ba;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 180, 51, 0); }
+  50% { box-shadow: 0 0 20px 4px rgba(255, 180, 51, 0.15); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,180,51,0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Gradient borders for pipeline */
+.gradient-border-gold { border-image: linear-gradient(to right, #FFB433, #ffc85c) 1; }
+.gradient-border-green { border-image: linear-gradient(to right, #10b981, #34d399) 1; }
+.gradient-border-orange { border-image: linear-gradient(to right, #f59e0b, #fbbf24) 1; }
+.gradient-border-purple { border-image: linear-gradient(to right, #8b5cf6, #a78bfa) 1; }
+.gradient-border-red { border-image: linear-gradient(to right, #ef4444, #f87171) 1; }
+
+/* Theme toggle switch */
+.theme-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--color-muted);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+  padding: 0;
+}
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.theme-toggle[data-active="true"] {
+  background: var(--color-primary);
+}
+.theme-toggle[data-active="true"]::after {
+  transform: translateX(20px);
+}
+
+/* Light mode form overrides */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  color: var(--color-foreground);
+  background-color: var(--color-input);
+  border-color: var(--color-border);
+}
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+/* TipTap rich text editor */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--color-muted-foreground);
+  opacity: 0.5;
+  pointer-events: none;
+  height: 0;
+}
+.tiptap {
+  outline: none;
+}
+.tiptap p { margin-bottom: 0.5em; }
+.tiptap ul, .tiptap ol { padding-left: 1.5em; margin-bottom: 0.5em; }
+.tiptap li { margin-bottom: 0.25em; }
+.tiptap a { color: var(--color-primary); text-decoration: underline; }
+.tiptap hr { border-color: var(--color-border); margin: 1em 0; }
+.tiptap strong { font-weight: 700; }
+
+/* Light mode specific overrides */
+[data-theme="light"] .gold-text {
+  background: linear-gradient(135deg, #b07d1a, #e6a02e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
