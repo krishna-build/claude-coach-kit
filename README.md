@@ -1,7 +1,7 @@
 <div align="center">
-  <h1>🚀 CoachKit</h1>
+  <h1>🚀 Coach Automation Kit</h1>
   <p><strong>Open-source marketing automation for coaches, consultants & solopreneurs</strong></p>
-  <p>Stop paying $500+/month for marketing tools. CoachKit gives you everything — for free.</p>
+  <p>Stop paying $500+/month for marketing tools. Coach Automation Kit gives you everything — for free.</p>
 
   <p>
     <a href="https://github.com/krishna-build/coach-automation-kit/stargazers"><img src="https://img.shields.io/github/stars/krishna-build/coach-automation-kit?style=social" alt="Stars"></a>
@@ -23,11 +23,11 @@
 
 ---
 
-## 💡 Why CoachKit?
+## 💡 Why Coach Automation Kit?
 
-Most coaches and solopreneurs pay **$200-500/month** for tools like HubSpot, ActiveCampaign, or ConvertKit. CoachKit replaces all of them with a **single open-source toolkit** that you own and control.
+Most coaches and solopreneurs pay **$200-500/month** for tools like HubSpot, ActiveCampaign, or ConvertKit. Coach Automation Kit replaces all of them with a **single open-source toolkit** that you own and control.
 
-| Feature | HubSpot | ConvertKit | CoachKit |
+| Feature | HubSpot | ConvertKit | Coach Automation Kit |
 |---------|---------|------------|----------|
 | Email sequences | ✅ $800/mo | ✅ $66/mo | ✅ **Free** |
 | Payment tracking | ❌ | ❌ | ✅ **Free** |
@@ -245,11 +245,11 @@ git push origin feature/your-feature
 
 ## 💬 Story
 
-> "I'm a solo entrepreneur from India. I needed marketing automation for my coaching clients but couldn't afford HubSpot or ActiveCampaign. So I built CoachKit with Claude as my AI development partner. No team, no funding — just one person and an AI. Now I'm open-sourcing it so every coach and solopreneur can have enterprise-grade automation for free."
+> "I'm a solo entrepreneur from India. I needed marketing automation for my coaching clients but couldn't afford HubSpot or ActiveCampaign. So I built Coach Automation Kit with AI as my development partner. No team, no funding — just one person and an AI. Now I'm open-sourcing it so every coach and solopreneur can have enterprise-grade automation for free."
 
 ---
 
 <div align="center">
-  <p><strong>If CoachKit saves you money, give it a ⭐</strong></p>
+  <p><strong>If Coach Automation Kit saves you money, give it a ⭐</strong></p>
   <p>Made with ❤️ in India</p>
 </div>
