@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SHEET_ID = "1nZOQfdCG6jt14eXwEPzADU9G8AN9bEKpP4ZrGRLURDI";
 const SHEET1_GID = "0";        // Main sheet — ₹299 paid leads (call pipeline)
-const SHEET2_GID = "1021465646"; // ₹50K conversions sheet
+const SHEET2_GID = "YOUR_SHEET_GID"; // ₹50K conversions sheet
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

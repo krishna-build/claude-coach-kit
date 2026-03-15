@@ -3,7 +3,7 @@
 <script>
 (function() {
   var TRACK_URL = 'https://YOUR_SUPABASE_REF.supabase.co/functions/v1/track-visitor';
-  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZGdpYm1nd2VleGlkbW9wcHJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkxOTYwNzUsImV4cCI6MjA1NDc3MjA3NX0.kaSQiKDfnorH3MjDkb9wVrjMfOMVdGiW7uJ8kj_JVAQ';
+  var SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
   
   // ── Helpers ──────────────────────────────────────────────────────────
   function getCookie(name) {
