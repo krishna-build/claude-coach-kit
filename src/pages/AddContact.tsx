@@ -166,7 +166,7 @@ export default function AddContact() {
             className="lg:col-span-2 space-y-5"
           >
             {/* Personal Information */}
-            <div className="rounded-xl border border-border/15 bg-card p-5">
+            <div className="rounded-xl border border-border/15 bg-card p-5 mt-2">
               <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-4">Personal Information</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InputField label="First Name" icon={User} value={form.first_name} onChange={(v: string) => update("first_name", v)} placeholder="e.g. John" required />
@@ -177,7 +177,7 @@ export default function AddContact() {
             </div>
 
             {/* Location */}
-            <div className="rounded-xl border border-border/15 bg-card p-5">
+            <div className="rounded-xl border border-border/15 bg-card p-5 mt-2">
               <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-4">Location</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InputField label="City" icon={MapPin} value={form.city} onChange={(v: string) => update("city", v)} placeholder="e.g. Mumbai" />
@@ -186,7 +186,7 @@ export default function AddContact() {
             </div>
 
             {/* UTM / Attribution */}
-            <div className="rounded-xl border border-border/15 bg-card p-5">
+            <div className="rounded-xl border border-border/15 bg-card p-5 mt-2">
               <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-4">Attribution (Optional)</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <InputField label="UTM Source" value={form.utm_source} onChange={(v: string) => update("utm_source", v)} placeholder="e.g. facebook" />
@@ -238,7 +238,7 @@ export default function AddContact() {
             </div>
 
             {/* Tags */}
-            <div className="rounded-xl border border-border/15 bg-card p-5">
+            <div className="rounded-xl border border-border/15 bg-card p-5 mt-2">
               <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-4">Tags</p>
               <div className="flex gap-2 mb-3">
                 <div className="relative flex-1">
@@ -266,7 +266,7 @@ export default function AddContact() {
             </div>
 
             {/* Notes */}
-            <div className="rounded-xl border border-border/15 bg-card p-5">
+            <div className="rounded-xl border border-border/15 bg-card p-5 mt-2">
               <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-4">Internal Notes</p>
               <div className="relative">
                 <StickyNote className="absolute left-3 top-3 w-3.5 h-3.5 text-muted-foreground/30" />

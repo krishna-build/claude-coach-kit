@@ -274,7 +274,7 @@ export default function Segments() {
                     className="bg-card border border-border/50 rounded-2xl p-6 space-y-5"
                   >
                     {/* Name + match mode */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 flex-wrap">
                       <input
                         value={editing.name}
                         onChange={e => setEditing({ ...editing, name: e.target.value })}
@@ -302,7 +302,7 @@ export default function Segments() {
                         const ops = OPERATORS_FOR[fieldDef.type];
                         const needsValue = !["is_true", "is_false"].includes(cond.operator);
                         return (
-                          <div key={cond.id} className="flex items-center gap-2">
+                          <div key={cond.id} className="flex items-center gap-2 pt-2 flex-wrap">
                             <select
                               value={cond.field}
                               onChange={e => updateCondition(cond.id, { field: e.target.value as FieldKey })}
@@ -336,9 +336,9 @@ export default function Segments() {
                       })}
                       <button
                         onClick={addCondition}
-                        className="flex items-center gap-1.5 text-xs text-primary hover:underline"
+                        className="flex items-center gap-1.5 text-xs text-primary hover:underline pt-2"
                       >
-                        <Plus className="w-3.5 h-3.5" /> Add condition
+                        <Plus className="w-3.5 h-3.5"/> Add condition
                       </button>
                     </div>
 

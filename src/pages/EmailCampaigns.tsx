@@ -176,7 +176,7 @@ export default function EmailCampaigns() {
 
         {/* Search + Filter Tabs */}
         <div className="space-y-3">
-          <div className="relative">
+          <div className="relative pt-2">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
@@ -192,7 +192,7 @@ export default function EmailCampaigns() {
             )}
           </div>
 
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap pt-2">
             {filterTabs.map((tab) => (
               <button
                 key={tab.key}
@@ -228,7 +228,7 @@ export default function EmailCampaigns() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-card rounded-2xl border border-border/50 p-16 text-center"
+            className="bg-card rounded-2xl border border-border/50 p-16 text-center mt-2"
           >
             <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
               <Mail className="w-8 h-8 text-primary/40" />
@@ -243,7 +243,7 @@ export default function EmailCampaigns() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => navigate("/campaigns/new")}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-gold-dark text-black text-sm font-semibold shadow-lg shadow-primary/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-gold-dark text-black text-sm font-semibold shadow-lg shadow-primary/20 mt-2"
             >
               <Plus className="w-4 h-4" /> Create Your First Campaign
             </motion.button>

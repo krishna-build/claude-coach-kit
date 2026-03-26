@@ -277,15 +277,15 @@ function TemplateFormModal({ template, onClose, onSave, saving }: TemplateFormPr
           {/* Body */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Message Body</label>
-              <span className="text-[10px] text-muted-foreground">Use {"{{variable}}"} for dynamic content</span>
+              <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide mt-2">Message Body</label>
+              <span className="text-[10px] text-muted-foreground mt-2">Use {"{{variable}}"} for dynamic content</span>
             </div>
             <textarea
               value={body}
               onChange={(e) => setBody(e.target.value)}
               rows={5}
               placeholder="Hi {{name}}! Thanks for reaching out..."
-              className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-2 focus:ring-[#25D366]/40 font-mono"
+              className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-2 focus:ring-[#25D366]/40 font-mono mt-2"
             />
             {/* Variable chips */}
             {vars.length > 0 && (
@@ -302,10 +302,10 @@ function TemplateFormModal({ template, onClose, onSave, saving }: TemplateFormPr
 
           {/* WhatsApp Preview */}
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide flex items-center gap-1.5">
+            <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide flex items-center gap-1.5 mt-2">
               <Eye className="w-3 h-3" /> Preview
             </label>
-            <div className="bg-[#0b141a] rounded-xl p-4 relative overflow-hidden">
+            <div className="bg-[#0b141a] rounded-xl p-4 relative overflow-hidden mt-2">
               {/* WhatsApp wallpaper pattern */}
               <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Cg fill=%22%2325D366%22%3E%3Ccircle cx=%2240%22 cy=%2240%22 r=%222%22/%3E%3C/g%3E%3C/svg%3E')" }} />
               <div className="relative">
@@ -596,7 +596,7 @@ export default function WhatsApp() {
         </div>
 
         {/* ── Section 1: Connection Status ── */}
-        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-5">
+        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-5 mt-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
@@ -670,7 +670,7 @@ export default function WhatsApp() {
 
               <button
                 onClick={() => setShowApiInput((v) => !v)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white w-full justify-center transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white w-full justify-center transition-all mt-2"
                 style={{ background: "#25D366" }}
               >
                 <MessageCircle className="w-4 h-4" />
@@ -681,7 +681,7 @@ export default function WhatsApp() {
         </div>
 
         {/* ── Section 2: Message Templates ── */}
-        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-4">
+        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-4 mt-2">
           <div className="flex items-center gap-2 flex-wrap">
             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
               <Zap className="w-4 h-4 text-primary" />
@@ -707,7 +707,7 @@ export default function WhatsApp() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search templates..."
-                className="w-full pl-10 pr-4 py-2 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full pl-10 pr-4 py-2 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 mt-2"
               />
             </div>
             <div className="relative">
@@ -814,7 +814,7 @@ export default function WhatsApp() {
         </div>
 
         {/* ── Section 3: Send Message ── */}
-        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-5">
+        <div className="bg-card rounded-2xl border border-border/50 p-6 space-y-5 mt-2">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
               <Send className="w-4 h-4 text-blue-400" />
@@ -936,7 +936,7 @@ export default function WhatsApp() {
           <button
             onClick={handleSend}
             disabled={!connected || !selectedContact || !selectedTemplate || sendStatus === "sending"}
-            className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm mt-2 font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
               !connected ? "bg-yellow-500/15 text-yellow-400 border border-yellow-500/30" : "text-white"
             }`}
             style={connected ? { background: "#25D366" } : undefined}
@@ -955,11 +955,11 @@ export default function WhatsApp() {
           {/* Message history */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-muted-foreground" />
-              <h3 className="text-sm font-semibold text-foreground">Recent Messages</h3>
-              <span className="ml-auto text-xs text-muted-foreground">Last {sentMessages.length}</span>
+              <Clock className="w-5 h-5 text-muted-foreground pt-2" />
+              <h3 className="text-sm font-semibold text-foreground pt-2">Recent Messages</h3>
+              <span className="ml-auto text-xs text-muted-foreground pt-2">Last {sentMessages.length}</span>
             </div>
-            <div className="rounded-xl border border-border/50 overflow-hidden">
+            <div className="rounded-xl border border-border/50 overflow-hidden mt-2">
               <table className="w-full text-xs">
                 <thead className="bg-surface">
                   <tr>
@@ -993,7 +993,7 @@ export default function WhatsApp() {
         </div>
 
         {/* ── Section 4: Bulk WhatsApp (Coming Soon) ── */}
-        <div className="relative bg-card rounded-2xl border border-border/50 p-6 space-y-4 overflow-hidden">
+        <div className="relative bg-card rounded-2xl border border-border/50 p-6 space-y-4 overflow-hidden mt-2">
           <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center gap-3">
             <div className="px-4 py-2 rounded-xl bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-sm font-bold tracking-wide">Coming Soon</div>
             <p className="text-sm text-muted-foreground text-center max-w-xs">Bulk WhatsApp messaging will be available in a future update</p>

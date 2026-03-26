@@ -1129,9 +1129,9 @@ export default function Sequences() {
               >
                 <div className="bg-card border border-primary/20 rounded-2xl p-4 space-y-3">
                   <p className="text-xs font-bold text-foreground">New Sequence</p>
-                  <input value={newName} onChange={e => setNewName(e.target.value)} placeholder="Name (e.g. Lead Nurture)" className="w-full h-9 px-3 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors" />
-                  <input value={newDesc} onChange={e => setNewDesc(e.target.value)} placeholder="Description (optional)" className="w-full h-9 px-3 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors" />
-                  <div className="flex gap-2">
+                  <input value={newName} onChange={e => setNewName(e.target.value)} placeholder="Name (e.g. Lead Nurture)" className="w-full h-9 px-3 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors mt-2" />
+                  <input value={newDesc} onChange={e => setNewDesc(e.target.value)} placeholder="Description (optional)" className="w-full h-9 px-3 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors mt-2" />
+                  <div className="flex gap-2 pt-2">
                     <button onClick={() => setShowCreate(false)} className="flex-1 py-2 rounded-xl bg-muted/50 text-muted-foreground text-xs font-semibold hover:bg-muted transition-colors">Cancel</button>
                     <button onClick={() => createSeq.mutate()} disabled={!newName} className="flex-1 py-2 rounded-xl bg-primary text-black text-xs font-bold disabled:opacity-30 hover:bg-primary/90 transition-colors">Create</button>
                   </div>

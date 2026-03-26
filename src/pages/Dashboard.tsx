@@ -515,7 +515,7 @@ export default function Dashboard() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 pt-2"
         >
           {statCards.map((stat, i) => {
             const Icon = stat.icon;
@@ -577,7 +577,7 @@ export default function Dashboard() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 pt-2"
         >
           {quickActions.map((action, i) => {
             const Icon = action.icon;
@@ -603,7 +603,7 @@ export default function Dashboard() {
         </motion.div>
 
         {/* ═══════════ REVENUE HERO + 14-DAY CHART ═══════════ */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 pt-2">
           {/* Revenue Hero */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -749,7 +749,7 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.5 }}
-          className="rounded-xl border border-border/15 p-4 sm:p-6 bg-card"
+          className="rounded-xl border border-border/15 p-4 sm:p-6 bg-card mt-2"
         >
           <div className="flex items-center gap-2 mb-4">
             <Mail className="w-4 h-4 text-muted-foreground/50" />
@@ -771,7 +771,7 @@ export default function Dashboard() {
         </motion.div>
 
         {/* ═══════════ FUNNEL + ACTIVITY ═══════════ */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 pt-2">
           {/* Conversion Funnel */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -851,7 +851,7 @@ export default function Dashboard() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="rounded-2xl border border-border/15 p-5 sm:p-7 bg-card"
+            className="rounded-2xl border border-border/15 p-5 sm:p-7 bg-card mb-2"
           >
             <div className="flex items-center justify-between mb-5 sm:mb-6">
               <div className="flex items-center gap-2.5 sm:gap-3">
@@ -976,7 +976,7 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.85 }}
-          className="rounded-xl border border-border/15 bg-card overflow-hidden"
+          className="rounded-xl border border-border/15 bg-card overflow-hidden mt-2"
         >
           <div className="p-4 sm:p-5 border-b border-border/10">
             <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-1">Weekly Cohort Analysis</p>
@@ -1017,7 +1017,7 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="rounded-xl border border-border/15 bg-card overflow-hidden"
+          className="rounded-xl border border-border/15 bg-card overflow-hidden mt-2"
         >
           <div className="p-4 sm:p-5 border-b border-border/10">
             <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.12em] mb-1">Higher Ticket Journeys</p>

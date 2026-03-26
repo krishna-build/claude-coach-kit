@@ -219,11 +219,13 @@ export default function Bookings() {
               <h1 className="text-xl sm:text-2xl font-bold text-foreground flex items-center gap-2">
                 <CalendarDays className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0" /> Bookings
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Your scheduling events & booking management</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 sm:whitespace-nowrap">
+  Your scheduling events & booking management
+</p>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pr-7">
             {/* Breadcrumb */}
             <div className="hidden md:flex items-center gap-1 text-sm text-muted-foreground mr-3">
               <button 
@@ -245,7 +247,7 @@ export default function Bookings() {
         </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 pt-2">
         <StatCard label="Total Bookings" value={totalBookings} icon={Calendar} color="bg-primary/15 text-primary" delay={0} />
         <StatCard label="This Month" value={thisMonthCount} icon={TrendingUp} color="bg-emerald-500/15 text-emerald-400" delay={0.05} />
         <StatCard label="Upcoming" value={upcomingBookings.length} icon={Clock} color="bg-blue-500/15 text-blue-400" delay={0.1} />
@@ -253,7 +255,7 @@ export default function Bookings() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="flex items-center gap-4 flex-wrap pt-2">
         <div className="flex gap-1 bg-card/50 border border-border/30 rounded-lg p-1 overflow-x-auto">
           {tabs.map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)}
@@ -278,12 +280,12 @@ export default function Bookings() {
                 className="w-full bg-muted/20 border border-border/40 rounded-lg pl-9 pr-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50" />
             </div>
             <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}
-              className="bg-muted/20 border border-border/40 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none">
-              <option value="all">All Status</option>
-              <option value="confirmed">Confirmed</option>
-              <option value="completed">Completed</option>
-              <option value="cancelled">Cancelled</option>
-              <option value="no_show">No Show</option>
+              className=" bg-muted/20 border border-border/40 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none">
+              <option value="all"  className="bg-background text-foreground">All Status</option>
+              <option value="confirmed"  className="bg-background text-foreground">Confirmed</option>
+              <option value="completed"  className="bg-background text-foreground">Completed</option>
+              <option value="cancelled"  className="bg-background text-foreground">Cancelled</option>
+              <option value="no_show"    className="bg-background text-foreground">No Show</option>
             </select>
             <button onClick={exportCSV}
               className="flex items-center gap-1.5 px-3 py-2 bg-muted/30 hover:bg-muted/50 text-muted-foreground hover:text-foreground rounded-lg text-sm transition-colors">
@@ -390,7 +392,7 @@ export default function Bookings() {
             {filteredBookings.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-center">
                 <div className="text-5xl mb-3">📅</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm pt-2">
                   {searchQuery || statusFilter !== "all" ? "No bookings match your filters" : "No bookings yet"}
                 </p>
               </div>

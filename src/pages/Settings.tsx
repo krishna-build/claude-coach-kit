@@ -29,7 +29,7 @@ function IntegrationCard({ name, icon: Icon, connected, detail, index }: {
       initial="hidden"
       animate="visible"
       variants={cardVariants}
-      className="bg-card rounded-2xl border border-border/50 p-5 flex items-center gap-4 hover:border-primary/30 transition-all shadow-sm group"
+      className="bg-card rounded-2xl border border-border/50 p-5 flex items-center gap-4 hover:border-primary/30 transition-all shadow-sm group mt-2"
     >
       <div className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors ${connected ? "bg-gradient-to-br from-emerald-500/20 to-emerald-500/5" : "bg-muted/50"}`}>
         <Icon className={`w-5 h-5 ${connected ? "text-emerald-400" : "text-muted-foreground"}`} />
@@ -166,7 +166,7 @@ function SmtpSettings() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
-      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2">
+      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2 mt-2">
         <Server className="w-4 h-4 text-primary" />
         SMTP Configuration
       </h2>
@@ -198,7 +198,7 @@ function SmtpSettings() {
         {/* Row 2: SMTP Host + Port */}
         <div className="grid grid-cols-3 gap-4">
           <div className="col-span-2">
-            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">SMTP Host</label>
+            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block mt-2">SMTP Host</label>
             <input
               type="text"
               value={form.smtp_host}
@@ -208,7 +208,7 @@ function SmtpSettings() {
             />
           </div>
           <div>
-            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Port</label>
+            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block mt-2">Port</label>
             <input
               type="text"
               value={form.smtp_port}
@@ -222,7 +222,7 @@ function SmtpSettings() {
         {/* Row 3: Username + Password */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Username</label>
+            <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block mt-2">Username</label>
             <input
               type="text"
               value={form.smtp_user}
@@ -255,12 +255,12 @@ function SmtpSettings() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setForm({ ...form, use_tls: !form.use_tls })}
-            className={`relative w-10 h-5 rounded-full transition-colors ${form.use_tls ? "bg-primary" : "bg-muted/60"}`}
+            className={`relative w-15 h-5 rounded-full transition-colors ${form.use_tls ? "bg-primary" : "bg-muted/60"}`}
           >
             <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform ${form.use_tls ? "translate-x-5" : "translate-x-0.5"}`} />
           </button>
-          <span className="text-sm text-foreground font-medium">Use TLS / STARTTLS</span>
-          <span className="text-xs text-muted-foreground">(recommended for port 587)</span>
+          <span className="text-sm text-foreground font-medium mt-2">Use TLS / STARTTLS</span>
+          <span className="text-xs text-muted-foreground mt-2">(recommended for port 587)</span>
         </div>
 
         {/* Actions row */}
@@ -275,13 +275,13 @@ function SmtpSettings() {
           </button>
 
           {/* Test email */}
-          <div className="flex flex-1 gap-2">
+          <div className="flex flex-1 gap-2 flex-wrap">
             <input
               type="email"
               value={testEmail}
               onChange={e => setTestEmail(e.target.value)}
               placeholder="Send test to: you@example.com"
-              className="flex-1 h-10 px-3.5 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
+              className="flex-1 h-10 px-3.5 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors mt-2"
             />
             <button
               onClick={handleTestEmail}
@@ -367,7 +367,7 @@ function WebhookDocs() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}>
-      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2">
+      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2 mt-2">
         <Webhook className="w-4 h-4 text-primary" />
         Webhook Endpoints
       </h2>
@@ -379,9 +379,9 @@ function WebhookDocs() {
         </div>
         <div className="p-5 space-y-4">
           {webhooks.map((wh) => (
-            <div key={wh.id} className="rounded-xl border border-border/40 overflow-hidden">
+            <div key={wh.id} className="rounded-xl border border-border/40 overflow-hidden mt-2">
               {/* Header */}
-              <div className="flex items-center gap-3 px-4 py-3 bg-background/40">
+              <div className="flex items-center gap-3 px-4 py-3 bg-background/40 pl-2 ">
                 <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Webhook className="w-3.5 h-3.5 text-primary" />
                 </div>
@@ -418,7 +418,7 @@ function WebhookDocs() {
               {expanded === wh.id && (
                 <div className="border-t border-border/20 p-4 space-y-3">
                   <CodeBlock code={wh.payload} />
-                  <div className="flex items-start gap-2 px-3 py-2.5 rounded-xl bg-amber-500/5 border border-amber-500/15">
+                  <div className="flex items-start gap-2 px-3 py-2.5 rounded-xl bg-amber-500/5 border border-amber-500/15 mt-2">
                     <Info className="w-3.5 h-3.5 text-amber-400 flex-shrink-0 mt-0.5" />
                     <p className="text-[11px] text-amber-400/80">{wh.example}</p>
                   </div>
@@ -477,7 +477,7 @@ function DeliverabilityChecker() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}>
-      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2">
+      <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2 mt-2">
         <Globe className="w-4 h-4 text-primary" />
         Email Deliverability
       </h2>
@@ -486,13 +486,13 @@ function DeliverabilityChecker() {
           Enter your sending domain to see what DNS records you need to configure for maximum deliverability.
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 flex-wrap">
           <input
             type="text"
             value={domain}
             onChange={e => { setDomain(e.target.value); setChecked(false); }}
             placeholder="yourcoach.com"
-            className="flex-1 h-10 px-3.5 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
+            className="flex-1 h-10 px-3.5 rounded-xl bg-background border border-border/50 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors mt-2"
           />
           <button
             onClick={handleCheck}
@@ -613,7 +613,7 @@ export default function SettingsPage() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3 mt-2">
           {statsItems.map((s, i) => (
             <motion.div
               key={s.label}
@@ -632,7 +632,7 @@ export default function SettingsPage() {
 
         {/* Integrations */}
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
-          <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2">
+          <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2 mt-2">
             <Shield className="w-4 h-4 text-primary" />
             Connected Integrations
           </h2>
@@ -655,7 +655,7 @@ export default function SettingsPage() {
 
         {/* System Webhook URLs */}
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}>
-          <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2">
+          <h2 className="text-sm font-semibold text-foreground/80 mb-3 flex items-center gap-2 mt-2">
             <Zap className="w-4 h-4 text-primary" />
             System Webhook URLs
           </h2>
@@ -694,7 +694,7 @@ export default function SettingsPage() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="bg-card rounded-2xl border border-border/50 p-5 shadow-sm"
+          className="bg-card rounded-2xl border border-border/50 p-5 shadow-sm mt-2"
         >
           <div className="flex items-center gap-3 text-sm">
             <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">

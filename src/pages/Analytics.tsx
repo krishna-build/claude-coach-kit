@@ -211,7 +211,7 @@ export default function Analytics() {
         </div>
 
         {/* Top Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
           <StatCard icon={Users} label="Total Contacts" value={(contacts || []).length.toLocaleString()} color={BLUE} />
           <StatCard icon={Mail} label="Emails Sent" value={emailStats.sent.toLocaleString()} color={GOLD} />
           <StatCard icon={TrendingUp} label="Open Rate" value={`${emailStats.openRate}%`} sub={`${emailStats.opened} opened`} color={GREEN} />
@@ -219,7 +219,7 @@ export default function Analytics() {
         </div>
 
         {/* Email Activity Chart */}
-        <div className="bg-card border border-border/50 rounded-2xl p-6">
+        <div className="bg-card border border-border/50 rounded-2xl p-6 mt-2">
           <div className="flex items-center gap-2 mb-6">
             <Mail className="w-4 h-4 text-primary" />
             <h2 className="text-sm font-semibold text-foreground">Email Activity — Last 14 Days</h2>
@@ -254,7 +254,7 @@ export default function Analytics() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Contact Growth */}
-          <div className="bg-card border border-border/50 rounded-2xl p-6">
+          <div className="bg-card border border-border/50 rounded-2xl p-6 mt-2">
             <div className="flex items-center gap-2 mb-6">
               <Users className="w-4 h-4 text-primary" />
               <h2 className="text-sm font-semibold text-foreground">Contact Growth</h2>
@@ -311,7 +311,7 @@ export default function Analytics() {
         </div>
 
         {/* Sequence Performance */}
-        <div className="bg-card border border-border/50 rounded-2xl overflow-hidden">
+        <div className="bg-card border border-border/50 rounded-2xl overflow-hidden mt-2">
           <div className="px-6 py-4 border-b border-border/50 flex items-center gap-2">
             <Zap className="w-4 h-4 text-primary" />
             <h2 className="text-sm font-semibold text-foreground">Sequence Performance</h2>
@@ -350,7 +350,7 @@ export default function Analytics() {
         </div>
 
         {/* Email Funnel */}
-        <div className="bg-card border border-border/50 rounded-2xl p-6">
+        <div className="bg-card border border-border/50 rounded-2xl p-6 mt-2">
           <div className="flex items-center gap-2 mb-6">
             <Trophy className="w-4 h-4 text-primary" />
             <h2 className="text-sm font-semibold text-foreground">Email Funnel</h2>

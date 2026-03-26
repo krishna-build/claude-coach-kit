@@ -290,7 +290,7 @@ export default function Contacts() {
 
         {/* Search & Filter Chips */}
         <div className="space-y-3">
-          <div className="relative">
+          <div className="relative pt-2">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
@@ -307,7 +307,7 @@ export default function Contacts() {
           </div>
 
           {/* Filter chips row */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-2">
             {filterChips.map((chip) => (
               <button
                 key={chip.key}
@@ -448,7 +448,7 @@ export default function Contacts() {
         </AnimatePresence>
 
         {/* Mobile: Card View */}
-        <div className="md:hidden space-y-3">
+        <div className="md:hidden space-y-3 pt-2">
           {isLoading ? (
             Array.from({ length: 5 }).map((_, i) => (
               <div key={i} className="bg-card rounded-2xl border border-border/50 p-4 animate-pulse">

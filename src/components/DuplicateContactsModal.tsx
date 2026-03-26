@@ -134,7 +134,7 @@ export default function DuplicateContactsModal({ onClose }: Props) {
               {dupGroups.map((group) => (
                 <div key={group.email} className="border border-border/40 rounded-xl overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 bg-muted/20">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-5">
                       <Users className="w-4 h-4 text-yellow-400" />
                       <span className="text-sm font-semibold text-foreground">{group.email}</span>
                       <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 font-bold">

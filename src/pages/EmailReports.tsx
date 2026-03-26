@@ -186,7 +186,7 @@ export default function EmailReports() {
         </div>
 
         {/* View Toggle: All | Sequences | Campaigns */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 overflow-x-auto whitespace-nowrap mt-2">
           {([
             { key: "all" as const, label: "All Emails", icon: Mail },
             { key: "sequences" as const, label: "Sequences", icon: Filter },
@@ -195,11 +195,10 @@ export default function EmailReports() {
             <button
               key={tab.key}
               onClick={() => { setView(tab.key); setContactFilter("all"); }}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
-                view === tab.key
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${view === tab.key
                   ? "bg-primary/15 text-primary border-primary/30"
                   : "bg-card text-muted-foreground border-border/50 hover:text-foreground"
-              }`}
+                }`}
             >
               <tab.icon className="w-3.5 h-3.5" />
               {tab.label}
@@ -208,7 +207,7 @@ export default function EmailReports() {
         </div>
 
         {/* Overall Stats - Row 1: Core Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
           {[
             { icon: Send, label: "Sent", value: totalSent, color: "text-foreground", bg: "bg-muted/30" },
             { icon: CheckCircle, label: "Delivered", value: totalDelivered, sub: pct(totalDelivered, totalSent), color: "text-emerald-400", bg: "bg-emerald-500/10" },
@@ -229,28 +228,41 @@ export default function EmailReports() {
         </div>
 
         {/* Row 2: Conversion + Health Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
           {[
             { icon: TrendingUp, label: "Converted", value: totalConverted, sub: pct(totalConverted, totalDelivered), color: "text-emerald-400", bg: "bg-emerald-500/10" },
             { icon: IndianRupee, label: "Revenue", value: `₹${totalRevenue.toLocaleString("en-IN")}`, sub: totalConverted > 0 ? `₹${Math.round(totalRevenue / totalConverted)} per conversion` : "", color: "text-primary", bg: "bg-primary/10" },
             { icon: AlertTriangle, label: "Bounced", value: totalBounced, sub: pct(totalBounced, totalSent), color: totalBounced > 0 ? "text-red-400" : "text-muted-foreground", bg: totalBounced > 0 ? "bg-red-500/10" : "bg-muted/30" },
             { icon: UserX, label: "Unsubscribed", value: totalUnsubscribed + totalComplained, sub: pct(totalUnsubscribed + totalComplained, totalSent), color: totalUnsubscribed + totalComplained > 0 ? "text-orange-400" : "text-muted-foreground", bg: totalUnsubscribed + totalComplained > 0 ? "bg-orange-500/10" : "bg-muted/30" },
           ].map(card => (
-            <div key={card.label} className="bg-card rounded-2xl border border-border/50 p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${card.bg} ${card.color}`}>
+            <div
+              key={card.label}
+              className="bg-card rounded-2xl border border-border/50 p-4 overflow-hidden"
+            >
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+              <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${card.bg} ${card.color}`}>
                   <card.icon className="w-4 h-4" />
                 </div>
-                <span className="text-[11px] font-medium text-muted-foreground uppercase">{card.label}</span>
+                <span className="text-[11px] font-medium text-muted-foreground uppercase flex-1 leading-tight">
+                  {card.label}
+                </span>
               </div>
-              <p className="text-2xl font-bold text-foreground">{typeof card.value === 'string' ? card.value : card.value}</p>
-              {card.sub && <p className="text-xs text-muted-foreground mt-0.5">{card.sub}</p>}
+
+              <p className="text-2xl font-bold text-foreground">
+                {card.value}
+              </p>
+
+              {card.sub && (
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {card.sub}
+                </p>
+              )}
             </div>
           ))}
         </div>
 
         {/* Contact Activity Section */}
-        <div className="bg-card rounded-2xl border border-border/50 overflow-hidden">
+        <div className="bg-card rounded-2xl border border-border/50 overflow-hidden mt-2">
           {/* Section header + filter tabs */}
           <div className="p-4 border-b border-border/30">
             <div className="flex items-center justify-between mb-3">
@@ -271,11 +283,10 @@ export default function EmailReports() {
                 <button
                   key={tab.key}
                   onClick={() => setContactFilter(tab.key)}
-                  className={`px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border ${
-                    contactFilter === tab.key
+                  className={`px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border ${contactFilter === tab.key
                       ? "bg-primary/15 text-primary border-primary/30"
                       : "bg-surface text-muted-foreground border-border/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -302,11 +313,10 @@ export default function EmailReports() {
                 return (
                   <div key={log.id} className="flex items-center gap-3 py-3 px-4 hover:bg-surface/50 transition-colors">
                     {/* Avatar */}
-                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                      isClicked ? "bg-blue-500/15 text-blue-400" :
-                      isOpened ? "bg-emerald-500/15 text-emerald-400" :
-                      "bg-muted/30 text-muted-foreground"
-                    }`}>
+                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${isClicked ? "bg-blue-500/15 text-blue-400" :
+                        isOpened ? "bg-emerald-500/15 text-emerald-400" :
+                          "bg-muted/30 text-muted-foreground"
+                      }`}>
                       {name[0]?.toUpperCase() || "?"}
                     </div>
 
