@@ -80,7 +80,7 @@ export default function Tags() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-card rounded-2xl border border-border/50 p-6 shadow-sm"
+          className="bg-card rounded-2xl border border-border/50 p-6 shadow-sm mt-2"
         >
           <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary/15 flex items-center justify-center">
@@ -136,7 +136,7 @@ export default function Tags() {
               <p className="text-sm text-muted-foreground">Loading tags...</p>
             </div>
           ) : (tags || []).length === 0 ? (
-            <div className="bg-card rounded-2xl border border-border/50 p-12 text-center shadow-sm">
+            <div className="bg-card rounded-2xl border border-border/50 p-12 text-center shadow-sm mt-2">
               <TagsIcon className="w-12 h-12 text-muted-foreground/20 mx-auto mb-3" />
               <p className="text-foreground/60 font-medium">No tags yet</p>
               <p className="text-muted-foreground text-xs mt-1">Create your first tag above</p>

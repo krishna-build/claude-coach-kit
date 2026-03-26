@@ -786,7 +786,7 @@ export default function Attribution() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.03, duration: 0.4 }}
-          className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-none"
+          className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-none pt-2"
         >
           {[
             { key: "visitors" as TabMode, label: "All Visitors", icon: Users },
@@ -816,7 +816,7 @@ export default function Attribution() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05, duration: 0.4 }}
-          className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-none"
+          className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-none pt-2"
         >
           {[
             { key: "all" as ViewMode, label: "All Visitors", shortLabel: "All", icon: Users, count: viewCounts.all, color: "blue" },
@@ -863,7 +863,7 @@ export default function Attribution() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="bg-card rounded-2xl border border-border/50 p-4 shadow-sm"
+          className="bg-card rounded-2xl border border-border/50 p-4 shadow-sm mt-2"
         >
           {/* Single scrollable row: pills + filters button */}
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5">
@@ -961,7 +961,7 @@ export default function Attribution() {
         {!isLoading && (
           <>
             {/* ──── Stat Cards ──── */}
-            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-4">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-4 mt-2">
               {statCards.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
@@ -1139,7 +1139,7 @@ export default function Attribution() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.4 }}
-              className="bg-card rounded-2xl border border-border/50 p-3 md:p-6 shadow-sm"
+              className="bg-card rounded-2xl border border-border/50 p-3 md:p-6 shadow-sm mt-2"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 md:mb-6">
                 <div>
@@ -1180,7 +1180,7 @@ export default function Attribution() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.4 }}
-              className="bg-card rounded-2xl border border-border/50 shadow-sm overflow-hidden"
+              className="bg-card rounded-2xl border border-border/50 shadow-sm overflow-hidden mt-2"
             >
               <div className="px-3 py-3 md:px-6 md:py-5 border-b border-border/30">
                 <div className="flex items-center justify-between">
@@ -1430,7 +1430,7 @@ export default function Attribution() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.4 }}
-              className="bg-card rounded-2xl border border-border/50 shadow-sm overflow-hidden"
+              className="bg-card rounded-2xl border border-border/50 shadow-sm overflow-hidden mt-2"
             >
               <div className="px-3 py-3 md:px-6 md:py-5 border-b border-border/30">
                 <div className="flex items-center justify-between">
@@ -1800,7 +1800,7 @@ export default function Attribution() {
 
           {/* ══════ SECTION: CONVERSION FUNNEL ══════ */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6">
+            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6 mt-2">
             <div className="flex items-center gap-2 mb-3 md:mb-6">
               <Target className="w-4 h-4 md:w-5 md:h-5 text-primary" />
               <h3 className="text-sm md:text-base font-bold text-foreground">Conversion Funnel</h3>
@@ -1861,7 +1861,7 @@ export default function Attribution() {
 
           {/* ══════ SECTION: BEST TIME HEATMAP ══════ */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6">
+            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6 mt-2">
             <div className="flex items-center gap-2 mb-1">
               <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary" />
               <h3 className="text-sm md:text-base font-bold text-foreground">Best Time to Run Ads</h3>
@@ -1955,7 +1955,7 @@ export default function Attribution() {
 
           {/* ══════ SECTION: CITY × CONVERSION TABLE ══════ */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6">
+            className="bg-card/60 border border-border/30 rounded-2xl p-3 md:p-6 mt-2">
             <div className="flex items-center gap-2 mb-1">
               <MapPin className="w-4 h-4 md:w-5 md:h-5 text-primary" />
               <h3 className="text-sm md:text-base font-bold text-foreground">City Performance</h3>

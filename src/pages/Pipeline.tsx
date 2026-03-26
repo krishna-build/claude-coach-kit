@@ -98,7 +98,7 @@ export default function Pipeline() {
         </motion.div>
 
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:snap-none">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:snap-none pt-2">
             {COLUMNS.map((col, colIdx) => (
               <Droppable droppableId={col.id} key={col.id}>
                 {(provided, snapshot) => (

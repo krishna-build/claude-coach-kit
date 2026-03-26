@@ -510,7 +510,7 @@ export function EmailEditor({ blocks, onChange, subject, onSubjectChange, header
                 <button onClick={(e) => { e.stopPropagation(); setEditingHeader(false); }} className="px-3 py-1 rounded bg-[#FFB433] text-white text-[10px] font-semibold">Done</button>
               </div>
             ) : (
-              <div style={{ display: "flex", alignItems: "center", gap: "30px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "30px" , flexWrap: "wrap"}}>
                 {/* Left: Italic headline */}
                 <div style={{ flex: 1 }}>
                   <p style={{ fontFamily: "'Inter', sans-serif", color: "#515856", fontSize: "16px", lineHeight: "165%", fontWeight: 700, fontStyle: "italic", margin: 0 }}>

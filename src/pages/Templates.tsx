@@ -949,7 +949,7 @@ export default function Templates() {
 
         {/* Search & Filter */}
         <div className="flex gap-3 flex-col sm:flex-row">
-          <div className="relative flex-1">
+          <div className="relative flex-1 pt-2">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
             <input
               value={searchQuery}
@@ -961,7 +961,7 @@ export default function Templates() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap pt-2">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}

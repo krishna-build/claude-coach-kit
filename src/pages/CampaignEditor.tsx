@@ -522,7 +522,7 @@ export default function CampaignEditor() {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => saveMutation.mutate({ status: "sent" })}
                     disabled={saveMutation.isPending || !subject}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-l-xl bg-gradient-to-r from-primary to-gold-dark text-black text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow disabled:opacity-50 disabled:shadow-none"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-l-xl bg-gradient-to-r from-primary to-gold-dark text-black text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow disabled:opacity-50 disabled:shadow-none pt-2"
                   >
                     <Send className="w-4 h-4" /> Send Now
                   </motion.button>
@@ -941,7 +941,7 @@ export default function CampaignEditor() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="bg-card rounded-2xl border border-border/50 p-5 overflow-hidden"
+                    className="bg-card rounded-2xl border border-border/50 p-5 overflow-hidden mt-2"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2">
@@ -984,7 +984,7 @@ export default function CampaignEditor() {
               </AnimatePresence>
 
               {/* Preview Mode Toggle */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pt-2">
                 <button
                   onClick={() => setPreviewMode("desktop")}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
@@ -1127,7 +1127,7 @@ export default function CampaignEditor() {
               </div>
 
               {/* Email Health / Spam Score (Feature 11) */}
-              <div className="bg-card rounded-2xl border border-border/50 p-4">
+              <div className="bg-card rounded-2xl border border-border/50 p-4 mt-2">
                 <div className="flex items-center gap-2 mb-3">
                   <Shield className="w-3.5 h-3.5 text-primary" />
                   <span className="text-xs font-semibold text-muted-foreground">Email Health</span>
@@ -1162,7 +1162,7 @@ export default function CampaignEditor() {
               </div>
 
               {/* Recipient Selector */}
-              <div className="bg-card rounded-2xl border border-border/50 p-4">
+              <div className="bg-card rounded-2xl border border-border/50 p-4 mt-2">
                 <label className="text-xs font-semibold text-muted-foreground block mb-2">
                   <Users className="w-3.5 h-3.5 inline mr-1.5" />
                   Recipients

@@ -121,7 +121,7 @@ export default function MetaAds() {
             <p className="text-sm text-muted-foreground">{since} → {until}</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 min-w-0">
             <button
               onClick={async () => {
                 setIsRefreshing(true);
@@ -140,29 +140,33 @@ export default function MetaAds() {
                 <button
                   key={key}
                   onClick={() => handleQuickRange(key)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                    range === key ? "bg-primary/15 text-primary" : "text-muted-foreground/50 hover:text-muted-foreground"
-                  }`}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${range === key ? "bg-primary/15 text-primary" : "text-muted-foreground/50 hover:text-muted-foreground"
+                    }`}
                 >
                   {label}
                 </button>
               ))}
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <CalendarDays className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+
               <input
                 type="date"
                 value={customSince}
                 onChange={(e) => { setCustomSince(e.target.value); if (customUntil) setRange("custom"); }}
-                className="h-10 px-3 rounded-xl border border-border/50 bg-card text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
+                className="h-10 px-3 rounded-xl border border-border/50 bg-card text-sm text-foreground flex-shrink-0 min-w-[150px]"
               />
-              <span className="text-muted-foreground text-xs">to</span>
+
+              <span className="text-muted-foreground text-xs flex-shrink-0">
+                to
+              </span>
+
               <input
                 type="date"
                 value={customUntil}
                 onChange={(e) => { setCustomUntil(e.target.value); if (customSince) setRange("custom"); }}
-                className="h-10 px-3 rounded-xl border border-border/50 bg-card text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
+                className="h-10 px-3 rounded-xl border border-border/50 bg-card text-sm text-foreground flex-shrink-0 min-w-[150px] ml-6"
               />
             </div>
           </div>
@@ -174,7 +178,7 @@ export default function MetaAds() {
             <p className="text-sm text-muted-foreground">Loading ad data...</p>
           </div>
         ) : error ? (
-          <div className="bg-danger/10 text-danger p-5 rounded-2xl text-sm border border-danger/20 font-medium">{(error as Error).message}</div>
+          <div className="bg-danger/10 text-danger p-5 rounded-2xl text-sm border border-danger/20 font-medium mt-2">{(error as Error).message}</div>
         ) : (
           <>
             {/* Stat Cards — Clean flat style */}
@@ -207,7 +211,7 @@ export default function MetaAds() {
                 const adCpl = ad.leads > 0 ? ad.spend / ad.leads : 0;
                 const spendPct = totals.spend > 0 ? ((ad.spend / totals.spend) * 100).toFixed(0) : 0;
                 // Sparkline seed data
-                const spark = [3,6,4,8,5,9,7].map(v => v * (ad.spend / Math.max(totals.spend, 1)));
+                const spark = [3, 6, 4, 8, 5, 9, 7].map(v => v * (ad.spend / Math.max(totals.spend, 1)));
                 return (
                   <motion.div
                     key={i}
@@ -218,63 +222,61 @@ export default function MetaAds() {
                     className="rounded-xl border border-border/15 bg-card relative overflow-hidden"
                   >
                     {/* Left accent bar */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-l-xl ${
-                      ad.purchases > 2 ? 'bg-emerald-500' : ad.purchases > 0 ? 'bg-primary' : 'bg-muted-foreground/20'
-                    }`} />
+                    <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-l-xl ${ad.purchases > 2 ? 'bg-emerald-500' : ad.purchases > 0 ? 'bg-primary' : 'bg-muted-foreground/20'
+                      }`} />
                     <div className="p-4 sm:p-5 pl-5 sm:pl-6">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="min-w-0 flex-1">
-                        <p className="text-sm font-medium text-foreground truncate" title={ad.name}>{ad.name}</p>
-                        <p className="text-[10px] text-muted-foreground/40 mt-0.5">{spendPct}% of total spend</p>
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm font-medium text-foreground truncate" title={ad.name}>{ad.name}</p>
+                          <p className="text-[10px] text-muted-foreground/40 mt-0.5">{spendPct}% of total spend</p>
+                        </div>
+                        <span className={`flex-shrink-0 ml-2 px-2 py-0.5 rounded-md text-[10px] font-medium ${ad.purchases > 0 ? 'bg-emerald-500/10 text-emerald-400' : 'bg-muted text-muted-foreground/40'
+                          }`}>
+                          {ad.purchases > 0 ? `${ad.purchases} sales` : 'No sales'}
+                        </span>
                       </div>
-                      <span className={`flex-shrink-0 ml-2 px-2 py-0.5 rounded-md text-[10px] font-medium ${
-                        ad.purchases > 0 ? 'bg-emerald-500/10 text-emerald-400' : 'bg-muted text-muted-foreground/40'
-                      }`}>
-                        {ad.purchases > 0 ? `${ad.purchases} sales` : 'No sales'}
-                      </span>
-                    </div>
 
-                    {/* Metrics grid */}
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4">
-                      <div>
-                        <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">Spend</p>
-                        <p className="text-base font-semibold text-foreground">₹{Math.round(ad.spend).toLocaleString("en-IN")}</p>
+                      {/* Metrics grid */}
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4">
+                        <div>
+                          <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">Spend</p>
+                          <p className="text-base font-semibold text-foreground">₹{Math.round(ad.spend).toLocaleString("en-IN")}</p>
+                        </div>
+                        <div>
+                          <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">Purchases</p>
+                          <p className="text-base font-semibold text-emerald-400">{ad.purchases}</p>
+                        </div>
+                        <div>
+                          <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">CPA</p>
+                          <p className="text-sm text-foreground">{ad.purchases > 0 ? `₹${Math.round(adCpa).toLocaleString("en-IN")}` : '—'}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">Purchases</p>
-                        <p className="text-base font-semibold text-emerald-400">{ad.purchases}</p>
-                      </div>
-                      <div>
-                        <p className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.08em]">CPA</p>
-                        <p className="text-sm text-foreground">{ad.purchases > 0 ? `₹${Math.round(adCpa).toLocaleString("en-IN")}` : '—'}</p>
-                      </div>
-                    </div>
 
-                    {/* Mini sparkline */}
-                    {(() => {
-                      const sparkColor = ad.purchases > 2 ? '#10b981' : ad.purchases > 0 ? '#FFB433' : '#6b7280';
-                      return (
-                        <svg viewBox="0 0 100 24" preserveAspectRatio="none" className="w-full h-8">
-                          <defs>
-                            <linearGradient id={`cs-${i}`} x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stopColor={sparkColor} stopOpacity="0.3" />
-                              <stop offset="100%" stopColor={sparkColor} stopOpacity="0.02" />
-                            </linearGradient>
-                          </defs>
-                          {(() => {
-                            const max = Math.max(...spark, 1);
-                            const coords = spark.map((v: number, j: number) => `${(j / 6) * 100},${24 - (v / max) * 20}`);
-                            return (
-                              <>
-                                <polygon points={`0,24 ${coords.join(" ")} 100,24`} fill={`url(#cs-${i})`} />
-                                <polyline points={coords.join(" ")} fill="none" stroke={sparkColor} strokeWidth="1.5" strokeLinejoin="round" />
-                              </>
-                            );
-                          })()}
-                        </svg>
-                      );
-                    })()}
+                      {/* Mini sparkline */}
+                      {(() => {
+                        const sparkColor = ad.purchases > 2 ? '#10b981' : ad.purchases > 0 ? '#FFB433' : '#6b7280';
+                        return (
+                          <svg viewBox="0 0 100 24" preserveAspectRatio="none" className="w-full h-8">
+                            <defs>
+                              <linearGradient id={`cs-${i}`} x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor={sparkColor} stopOpacity="0.3" />
+                                <stop offset="100%" stopColor={sparkColor} stopOpacity="0.02" />
+                              </linearGradient>
+                            </defs>
+                            {(() => {
+                              const max = Math.max(...spark, 1);
+                              const coords = spark.map((v: number, j: number) => `${(j / 6) * 100},${24 - (v / max) * 20}`);
+                              return (
+                                <>
+                                  <polygon points={`0,24 ${coords.join(" ")} 100,24`} fill={`url(#cs-${i})`} />
+                                  <polyline points={coords.join(" ")} fill="none" stroke={sparkColor} strokeWidth="1.5" strokeLinejoin="round" />
+                                </>
+                              );
+                            })()}
+                          </svg>
+                        );
+                      })()}
                     </div>
                   </motion.div>
                 );

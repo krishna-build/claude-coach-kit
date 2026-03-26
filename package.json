@@ -34,6 +34,7 @@
   "homepage": "https://github.com/YOUR_USERNAME/coachkit#readme",
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
+    "@sentry/react": "^10.44.0",
     "@supabase/supabase-js": "^2.95.3",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-query": "^5.90.21",
@@ -44,9 +45,14 @@
     "@tiptap/starter-kit": "^3.20.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.34.0",
+    "grapesjs": "^0.22.14",
+    "grapesjs-blocks-basic": "^1.0.2",
+    "grapesjs-preset-webpage": "^1.0.3",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.564.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.13.0",
     "recharts": "^3.7.0",
     "tailwindcss": "^4.1.18"
